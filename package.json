@@ -1,6 +1,6 @@
 {
     "name": "block-one-coins",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "block-one coins parameters module",
     "main"  : "./lib/index.js",
     "scripts": {

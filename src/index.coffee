@@ -13,16 +13,16 @@ module.exports =
         id              : 'btc'
         blockInterval   : 600
         tick            : '0.00000001'
-        tickBig         : new Big module.exports.btc.tick
+        tickBig         : new Big '0.00000001'
         
     doge : 
         id              : 'doge'
         blockInterval   : 60
         tick            : '0.00000001'
-        tickBig         : new Big module.exports.doge.tick
+        tickBig         : new Big '0.00000001'
 
     ltc :
         id              : 'ltc'
         blockInterval   : 180
         tick            : '0.00000001'
-        tickBig         : new Big module.exports.ltc.tick         
+        tickBig         : new Big '0.00000001'         
