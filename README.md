@@ -1,6 +1,6 @@
 block-one-coins
 =============
 
-Crypto currencies parameters for block-one
+Crypto currencies parameters and validation for block-one
 
-Current version: 0.1.1
+Current version: 0.1.2
