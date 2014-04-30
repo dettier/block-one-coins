@@ -11,8 +11,6 @@ BigZero    = new Big 0
 ###
 module.exports =
 
-    MessageTypes        : require './message-enums'
-
     btc :
         id              : 'btc'
         blockInterval   : 600

@@ -5,7 +5,7 @@ _               = require 'lodash'
 
 Big             = require 'bignumber.js'
 
-moduleUnderTest = require '../src/index'
+moduleUnderTest = require '../index'
 
 
 describe 'round:', ->
