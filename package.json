@@ -1,6 +1,6 @@
 {
-    "name": "block-one-coins",
-    "version": "0.1.2",
+    "name": "block-one-common",
+    "version": "0.1.3",
     "description": "block-one coins parameters module",
     "main"  : "./lib/index.js",
     "scripts": {
@@ -8,12 +8,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/dettier/block-one-coins.git"
+        "url": "git://github.com/dettier/block-one-common.git"
     },
     "author": "ugeng",
     "license": "BSD-2-Clause",
     "bugs": {
-    "url": "https://github.com/dettier/block-one-coins/issues"
+    "url": "https://github.com/dettier/block-one-common/issues"
     },
     "dependencies": {
         "gulp-util": "~2.2.12",

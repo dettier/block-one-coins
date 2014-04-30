@@ -12,7 +12,7 @@ describe 'round:', ->
 
     beforeEach ->
         @sandbox    = sinon.sandbox.create()
-        
+
     it 'должен округлять до необходимого количества знаков после запятой', ->
 
         value = '0.53572376218474'
@@ -28,7 +28,7 @@ describe 'round:', ->
         result = moduleUnderTest.round 'btc', value
 
         assert.equal result, '0.53572375'
-    
+
     it 'если дробная часть короче предела, не должен изменять число', ->
 
         value = '0.535'
@@ -48,11 +48,11 @@ describe 'round:', ->
     it 'Если число меньше заданного предела, должен кидать ошибку EINVAL', ->
 
         value = '0.000000009'
-        error = undefined 
-        
-        try 
+        error = undefined
+
+        try
             moduleUnderTest.round 'btc', value
-        catch err 
+        catch err
             error = err
 
         assert.deepEqual error, new Error 'EINVAL'

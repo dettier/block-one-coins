@@ -6,38 +6,48 @@ mocha  = require 'gulp-mocha'
 
 
 gulp.task 'test', () ->
-    return gulp.src(['./build/test/**/*.js'], { read : false })
+    return gulp.src(['./test/**/*.js'], { read : false })
     .on 'data', (file) ->
             gulp.src(file.path)
             .pipe(mocha({ reporter : 'list' }))
             .on('error', gutil.log)
 
 gulp.task 'watch-and-test', () ->
-    gulp.src(['./build/**/*.js'], { read: false })
+    gulp.src(['./lib/**/*.js'], { read: false })
     .pipe(watch((events, cb) ->
             gulp.run('test', cb)))
     .on('error', gutil.log)
     return
 
 gulp.task 'compile', () ->
-    gulp.src('./{src,test}/**/*.coffee')
+    gulp.src(['./src/**/*.coffee', './src/**/*.coffee'])
     .pipe(coffee({ bare : true, map : true }).on('error', gutil.log))
-    .pipe(gulp.dest('./build/'))
+    .pipe(gulp.dest('./lib/'))
+
+    gulp.src('./test/**/*.coffee')
+    .pipe(coffee({ bare : true, map : true }).on('error', gutil.log))
+    .pipe(gulp.dest('./lib/test/'))
 
     return
 
 gulp.task 'watch-and-compile', () ->
-    gulp.src('./{src,test}/**/*.coffee')
+    gulp.src(['./src/**/*.coffee', './src/**/*.coffee'])
     .pipe(watch())
     .pipe(coffee({ bare : true, map : true }).on('error', gutil.log))
-    .pipe(gulp.dest('./build/'))
+    .pipe(gulp.dest('./lib/'))
+
+    gulp.src('./test/**/*.coffee')
+    .pipe(watch())
+    .pipe(coffee({ bare : true, map : true }).on('error', gutil.log))
+    .pipe(gulp.dest('./lib/test/'))
 
     return
 
 gulp.task 'copy-files', () ->
 
     gulp.src(['./src/**/*.json'])
-    .pipe(gulp.dest('./build/src'))
+    .pipe(watch())
+    .pipe(gulp.dest('./lib'))
 
     return
 
