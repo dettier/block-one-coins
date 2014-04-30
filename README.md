@@ -1,6 +1,7 @@
-block-one-coins
+block-one-common
 =============
 
+Common module for block-one 
 Crypto currencies parameters and validation for block-one
 
-Current version: 0.1.2
+Current version: 0.1.3
