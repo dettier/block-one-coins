@@ -1,4 +1,6 @@
-Big         =   require 'bignumber.js'
+_           = require 'lodash'
+
+Big         = require 'bignumber.js'
 
 BigZero    = new Big 0
 
@@ -38,27 +40,37 @@ module.exports.getCoinParams = (coin) ->
 
     params
 
-module.exports.round = (currency, value) ->
+    
+module.exports.round = (coin, value) ->
 
-    value = module.exports.roundBig currency, new Big value
+    value = module.exports.roundFloat coin, value.toString()
 
     value?.toString()
 
+    
 module.exports.roundBig = (coin, value) ->
 
+    value = module.exports.roundFloat coin, value.toString()
+    
+    new Big value
+    
+
+module.exports.roundFloat = (coin, value) ->
+
+    if not _.isNumber value
+        value = parseFloat value
+        
     params = module.exports.getCoinParams coin
 
     if not params?
         throw new Error 'ENOTSUP'
 
-    if not value instanceof Big
+    value = value / params.tickBig
+
+    value = Math.floor value
+    value = value * params.tickBig
+
+    if value == 0
         throw new Error 'EINVAL'
 
-    value = value.dividedBy params.tickBig
-    value = value.round 0, Big.ROUND_DOWN
-    value = value.times params.tickBig
-
-    if value.equals BigZero
-        throw new Error 'EINVAL'
-
-    value
+    value    
