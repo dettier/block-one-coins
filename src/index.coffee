@@ -31,7 +31,7 @@ module.exports.coins =
 
 module.exports.getCoinParams = (coin) ->
 
-    params = module.exports[coin?.toLowerCase()]
+    params = module.exports.coins[coin?.toLowerCase()]
 
     if not params?
         throw new Error 'ENOSUP'
