@@ -9,7 +9,7 @@ BigZero    = new Big 0
     tick : стоковое представление дискреты валюты (минимальный номинал, тик)
     tickBig : представление tick в виде BigNumber для избежания ошибок округления floating point numbers 
 ###
-module.exports =
+module.exports.coins =
 
     btc :
         id              : 'btc'
