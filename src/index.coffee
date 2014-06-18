@@ -4,6 +4,21 @@ Big         = require 'bignumber.js'
 
 BigZero    = new Big 0
 
+
+module.exports.connections = 
+    
+    protocol            : 'tcp://'
+    
+    corePort            : 17077
+    coreOrderbookPort   : 17080
+    coreDealsPort       : 17081
+    coreHistoryPort     : 17082
+    coreHeartbeatPort   : 17083
+    
+    walletPort          : 17090
+    historyPort         : 17095
+    
+
 ###
     Параметры криптовалют
     id : наименование
