@@ -8,6 +8,7 @@ BigZero    = new Big 0
 module.exports.connections = 
     
     protocol            : 'tcp://'
+    protocolClean       : 'tcp'
     
     corePort            : 17077
     coreOrderbookPort   : 17080
